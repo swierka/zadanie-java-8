@@ -1,0 +1,20 @@
+public class Circle extends GeometricShape {
+    private double radius;
+
+    public Circle(String shapeType, String name, double perimeter, double radius) {
+        super(shapeType, name, perimeter);
+        this.radius = radius;
+    }
+
+    public Circle(double radius) {
+        this.radius = radius;
+    }
+
+    public double getRadius() {
+        return radius;
+    }
+
+    public void setRadius(double radius) {
+        this.radius = radius;
+    }
+}
