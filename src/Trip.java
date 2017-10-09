@@ -18,11 +18,19 @@ public class Trip {
             System.out.println("Podaj kurs");
             newtrip[i].setExchangeRate(scan.nextDouble());
             scan.nextLine();
-            if (i > 1) {
+            if (i > 0) {
                 if (newtrip[i].equals(newtrip[i - 1])) {
                     System.out.println("Wprowadzone informacje już istnieją. Podaj inny kraj");
                     i--;
                 }
+
+            }
+            if (i > 1) {
+                if (newtrip[i].equals(newtrip[i - 2])) {
+                    System.out.println("Wprowadzone informacje już istnieją. Podaj inny kraj");
+                    i--;
+                }
+
             }
         }
     }
