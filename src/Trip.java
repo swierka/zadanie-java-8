@@ -10,6 +10,7 @@ public class Trip {
         newtrip[1] = new TripPlanner(null, null, 0);
         newtrip[2] = new TripPlanner(null, null, 0);
 
+        int count = 0;
         for (int i = 0; i < newtrip.length; i++) {
             System.out.println("Podaj kraj");
             newtrip[i].setCountry(scan.nextLine());
@@ -18,20 +19,20 @@ public class Trip {
             System.out.println("Podaj kurs");
             newtrip[i].setExchangeRate(scan.nextDouble());
             scan.nextLine();
-            if (i > 0) {
-                if (newtrip[i].equals(newtrip[i - 1])) {
-                    System.out.println("Wprowadzone informacje już istnieją. Podaj inny kraj");
-                    i--;
-                }
+            count++;
 
-            }
-            if (i > 1) {
-                if (newtrip[i].equals(newtrip[i - 2])) {
-                    System.out.println("Wprowadzone informacje już istnieją. Podaj inny kraj");
-                    i--;
+            //Nie wiem jak zrobic, zeby w przypadku powtorzenia tablica nie uwzgledniala tego obiektu
+            for (int j = 0; j < count; j++) {
+                if (i == j) {
+                } else {
+                    boolean alreadyExists = newtrip[i].equals(newtrip[j]);
+                    if (alreadyExists) {
+                        System.out.println("Taki rekord już istnieje. Spróbuj jeszcze raz");
+                        break;
+                    }
                 }
-
             }
         }
+        scan.close();
     }
 }

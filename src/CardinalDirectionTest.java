@@ -8,23 +8,7 @@ public class CardinalDirectionTest {
         String kierunek = scanner.nextLine();
 
         CardinalDirection yourDirection = CardinalDirection.valueOf(kierunek);
-
-
-        switch (yourDirection) {
-            case NORTH:
-                System.out.println(yourDirection);
-                break;
-            case EAST:
-                System.out.println(yourDirection);
-                break;
-            case SOUTH:
-                System.out.println(yourDirection);
-                break;
-            case WEST:
-                System.out.println(yourDirection);
-                break;
-        }
-
+        System.out.println(yourDirection);
 
         System.out.println("Podaj kierunek geograficzny:");
         int kierunekNum = scanner.nextInt();
