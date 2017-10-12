@@ -20,14 +20,15 @@ public class Trip {
             newtrip[i].setExchangeRate(scan.nextDouble());
             scan.nextLine();
             count++;
-
-            //Nie wiem jak zrobic, zeby w przypadku powtorzenia tablica nie uwzgledniala tego obiektu
+            
             for (int j = 0; j < count; j++) {
                 if (i == j) {
                 } else {
                     boolean alreadyExists = newtrip[i].equals(newtrip[j]);
                     if (alreadyExists) {
                         System.out.println("Taki rekord już istnieje. Spróbuj jeszcze raz");
+                        i--;
+                        count--;
                         break;
                     }
                 }
